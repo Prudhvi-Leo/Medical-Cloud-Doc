@@ -185,6 +185,73 @@ CURRENCY=
 
 ---
 
+### 🧑‍💼 Admin Panel – Overview
+```
+The Admin Panel is a dedicated React application that allows platform administrators to manage the doctor appointment system. It provides full control over doctors, appointments, and global platform data.
+
+This panel is built with React 19, React Router v7, Axios, and React Toastify, and is deployed separately on Vercel.
+```
+
+### 🧩 Features Included
+## 💼 Admin Features
+```
+Admin Login with JWT Authentication
+
+View Dashboard Metrics
+
+Total Doctors
+
+Total Appointments
+
+Total Patients
+
+Latest Appointments
+
+Add New Doctors (with Cloudinary image upload)
+
+View and Manage All Doctors
+
+View Full Appointment List
+
+Update Doctor Availability
+
+🧑‍⚕️ Doctor Features (Inside Admin Panel Login)
+
+Doctor Dashboard (Earnings, Appointments Count, Patients, Recent Appointments)
+
+View All Appointments
+
+Complete or Cancel Appointments
+
+Update Doctor Profile (Fees, Address, Availability, etc.)
+```
+### 🗂️ Folder Structure
+```
+admin/
+│── src/
+│   ├── pages/
+│   │   ├── admin/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── AddDoctor.jsx
+│   │   │   ├── DoctorsList.jsx
+│   │   │   ├── AllAppointments.jsx
+│   │   ├── Doctor/
+│   │   │   ├── DoctorDashboard.jsx
+│   │   │   ├── DoctorAppointment.jsx
+│   │   │   ├── DoctorProfile.jsx
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Sidebar.jsx
+│   ├── context/
+│   │   ├── AdminContext.jsx
+│   │   ├── DoctorContext.jsx
+│   │   ├── AppContext.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│── package.json
+│── README.md
+
+```
 ## 🚀 Deployment Guide
 
 ### Frontend / Admin (Vercel)
@@ -210,3 +277,4 @@ VITE_BACKEND_URL=https://your-backend-url
 **Prudhvi**  
 Full Stack MERN Developer  
 Specialized in backend, cloud integration & scalable systems.
+
