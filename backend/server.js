@@ -18,7 +18,9 @@ app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 
-
+app.get('/', (req, res) => {
+  res.send('Hello Server is Running!!!');
+});
 //api endpoints
     //api/admin/add-doctor
 app.use('/api/admin' ,adminRouter)
