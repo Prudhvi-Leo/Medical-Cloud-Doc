@@ -1,138 +1,107 @@
-🚀 MediCloudConnect – Doctor Appointment Booking System
+# 🚀 MediCloudConnect – Doctor Appointment Booking System
 
-A full-stack MERN application that allows patients to book doctor appointments, doctors to manage their schedules, and admins to manage the entire platform.
+A full-stack **MERN** based appointment booking platform for doctors, patients, and admins.
 
-🌟 Overview
+---
 
-MediCloudConnect is a complete medical appointment booking system where:
+## 🌟 Overview
 
-🧑‍⚕️ Doctors can manage profiles, track appointments, accept/complete/cancel bookings, and view dashboards.
+**MediCloudConnect** is a complete healthcare appointment management system where:
 
-👤 Users/Patients can browse doctors, check availability, book appointments, view or cancel bookings, and update their profiles.
+- 🧑‍⚕️ **Doctors** manage availability, appointments, and dashboard insights  
+- 👤 **Users** book appointments, update profiles, make dummy payments  
+- 🛠️ **Admins** add doctors, manage availability & view platform stats  
 
-🛠️ Admins can add doctors, manage availability, track appointments, and view platform statistics.
+---
 
-Built using the MERN stack, the system includes authentication, cloud image uploads, role-based logic, and a highly responsive UI.
+## ✨ Features
 
-🖼️ Features
-👤 User Features
+### 👤 User Features
+- JWT-based authentication (Register/Login)
+- Browse all doctors
+- Filter by speciality
+- Book appointments (dynamic 30-min slots)
+- Cancel appointments
+- View booking history
+- Update profile (Cloudinary image upload)
+- Dummy Razorpay payment simulation
 
-Register & Login with JWT authentication
+### 🧑‍⚕️ Doctor Features
+- Login and manage appointments
+- Mark appointment Completed/Cancelled
+- Dashboard: earnings, patients count, appointments stats
+- Update profile: availability, fees, address, etc.
 
-Browse all doctors
+### 🛠️ Admin Features
+- Admin login
+- Add new doctors
+- Manage doctor availability
+- View all doctors
+- View all appointments
+- Dashboard overview
 
-Filter doctors by speciality
+---
 
-Book appointments (30-min dynamic slots)
+## 🛠️ Tech Stack
 
-Cancel appointments
+### Frontend
+- React 19  
+- Tailwind CSS  
+- React Router DOM 7  
+- Axios  
+- React Toastify  
 
-Update profile with image upload (Cloudinary)
+### Backend
+- Node.js  
+- Express.js  
+- MongoDB + Mongoose  
+- JWT Authentication  
+- Multer  
+- Cloudinary  
+- Razorpay (Simulated)  
 
-View appointment history
+### Deployment
+- **Frontend** → Vercel  
+- **Admin** → Vercel  
+- **Backend** → Render / Railway / Local server  
 
-Simulated Razorpay payment flow
+---
 
-🧑‍⚕️ Doctor Features
+## 📁 Project Structure
 
-Login using email/password
-
-View all upcoming/completed/cancelled appointments
-
-Mark appointments as Completed
-
-Mark appointments as Cancelled
-
-View earnings, patients count & dashboard metrics
-
-Edit profile (fees, availability, address, etc.)
-
-🛠️ Admin Features
-
-Admin login
-
-Add new doctors
-
-Manage doctor availability
-
-View all doctors
-
-View all appointments
-
-Review dashboard stats (doctors, patients, appointments)
-
-📦 System Features
-
-Secure JWT-based authentication
-
-Cloudinary file upload
-
-MongoDB/Mongoose models
-
-Fully responsive UI (TailwindCSS)
-
-REST API architecture
-
-Organized folder structure
-
-Error-handling & protected routes
-
-🛠️ Tech Stack
-Frontend
-
-React 19
-
-Tailwind CSS
-
-React Router DOM 7
-
-Axios
-
-React Toastify
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB + Mongoose
-
-JWT Authentication
-
-Multer (file upload)
-
-Cloudinary
-
-Razorpay (simulated payment)
-
-Deployment
-
-Frontend → Vercel
-
-Admin Dashboard → Vercel
-
-Backend → Local / Render / Railway / Any server
-
-📁 Project Structure
+```
 Doc/
 │
-├── frontend/     → Patient App (React)
+├── frontend/      → Patient App (React)
 │
-├── admin/        → Admin Dashboard (React)
+├── admin/         → Admin Dashboard (React)
 │
-└── backend/      → Node + Express API
+└── backend/       → Node + Express API
+```
 
-⚙️ Local Setup Instructions
-1️⃣ Clone the Repository
+---
+
+## ⚙️ Local Setup Instructions
+
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/yourname/MediCloudConnect.git
 cd MediCloudConnect
+```
 
-2️⃣ Setup Backend
+---
+
+## 🔧 Backend Setup
+
+### 2️⃣ Install dependencies & run backend
+```bash
 cd backend
 npm install
+npm run dev
+```
 
-Create .env file
+Create `.env` file inside **backend/**
+```
 MONGODB_URI=
 CLOUDINARY_NAME=
 CLOUDINARY_API_KEY=
@@ -141,79 +110,69 @@ ADMIN_EMAIL=
 ADMIN_PASSWORD=
 JWT_SECRET=
 CURRENCY=
+```
 
-Start backend
-npm run dev
+Backend runs on **http://localhost:5000**
 
+---
 
-Default port → 5000
+## 💻 Frontend Setup
 
-3️⃣ Setup Frontend (User App)
+### 3️⃣ Install dependencies & run frontend
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-
-Default port → 5173
-
-Create frontend/.env
-
+Create **frontend/.env**
+```
 VITE_BACKEND_URL=http://localhost:5000
+```
 
-4️⃣ Setup Admin (Separate React App)
+Runs on **http://localhost:5173**
 
-(If needed, I will add details once you provide admin folder info.)
+---
 
-🔌 API Summary
-User Routes (/api/user)
+## 🧑‍💼 Admin App Setup
+(Will update after admin folder details.)
 
-POST /register — Create User
+---
 
-POST /login — Login User
+## 🔌 API Routes Overview
 
-GET /get-profile — Fetch User Profile
+### **User Routes** (`/api/user`)
+- POST /register
+- POST /login
+- GET /get-profile
+- POST /update-profile
+- POST /book-appointment
+- GET /appointments
+- POST /cancel-appointment
+- POST /payment-razorpay
+- POST /verifyRazorpay
 
-POST /update-profile — Update Profile
+### **Doctor Routes** (`/api/doctor`)
+- POST /login
+- GET /appointments
+- POST /complete-appointment
+- POST /cancel-appointment
+- GET /dashboard
+- GET /profile
+- POST /update-profile
 
-POST /book-appointment — Book Appointment
+### **Admin Routes** (`/api/admin`)
+- POST /login
+- POST /add-doctor
+- GET /appointments
+- GET /dashboard
+- POST /change-availability
 
-GET /appointments — Get User Appointments
+---
 
-POST /cancel-appointment — Cancel Appointment
+## 🛡️ Required Environment Variables
 
-POST /payment-razorpay — Create Dummy Order
-
-POST /verifyRazorpay — Verify Payment
-
-Doctor Routes (/api/doctor)
-
-POST /login
-
-GET /appointments
-
-POST /complete-appointment
-
-POST /cancel-appointment
-
-GET /dashboard
-
-GET /profile
-
-POST /update-profile
-
-Admin Routes (/api/admin)
-
-POST /login
-
-POST /add-doctor
-
-GET /appointments
-
-GET /dashboard
-
-POST /change-availability
-
-🛡️ Environment Variables Required
+```
 MONGODB_URI=
 CLOUDINARY_NAME=
 CLOUDINARY_API_KEY=
@@ -222,33 +181,32 @@ ADMIN_EMAIL=
 ADMIN_PASSWORD=
 JWT_SECRET=
 CURRENCY=
+```
 
-🚀 Deployment
-Frontend & Admin (React)
+---
 
-Deploy on Vercel
+## 🚀 Deployment Guide
 
-Push the frontend and admin folders to GitHub
+### Frontend / Admin (Vercel)
+1. Push to GitHub  
+2. Import project on Vercel  
+3. Add environment variable:  
+```
+VITE_BACKEND_URL=https://your-backend-url
+```
+4. Deploy
 
-Import into Vercel
 
-Add Environment Variable → VITE_BACKEND_URL
+### Backend (Render/Railway)
+- Upload backend folder or connect GitHub repo  
+- Add all `.env` values  
+- Deploy  
+- Copy the backend URL & update Vercel frontend env variable  
 
-Backend
+---
 
-Deploy on:
+## 🙋‍♂️ Author
 
-Render
-
-Railway
-
-Cyclic
-
-VPS
-
-Set all .env variables on the hosting platform.
-
-🙋‍♂️ Author
-
-Prudhvi – Full Stack Developer
-Skilled in MERN stack, backend architecture, and cloud integrations.
+**Prudhvi**  
+Full Stack MERN Developer  
+Specialized in backend, cloud integration & scalable systems.
